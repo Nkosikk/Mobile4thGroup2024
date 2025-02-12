@@ -1,6 +1,7 @@
+package Basics;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
@@ -15,7 +16,7 @@ public class Calculator {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("app", System.getProperty("user.dir") + "/src/main/Apps/Calculator.apk");
+        caps.setCapability("app", System.getProperty("user.dir") + "/src/main/Apps/Basics.Calculator.apk");
 //        caps.setCapability("noReset",true);
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), caps);
