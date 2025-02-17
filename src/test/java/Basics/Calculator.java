@@ -4,14 +4,11 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-
 import java.net.MalformedURLException;
 import java.net.URL;
-
 public class Calculator {
     private AndroidDriver driver;
 
-    @BeforeClass
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
