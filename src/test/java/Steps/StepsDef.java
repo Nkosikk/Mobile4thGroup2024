@@ -1,6 +1,7 @@
 package Steps;
 
 import Screens.calculatorScreen;
+import Utils.AppiumDriverFactory;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
@@ -16,13 +17,8 @@ public class StepsDef {
 
     @Given("I open the calculator app")
     public void iOpenTheCalculatorApp() throws MalformedURLException {
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("platformName", "Android");
-        caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("app", System.getProperty("user.dir") + "/src/main/Apps/Calculator.apk");
-
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), caps);
-        calculator = new calculatorScreen(driver);
+        AppiumDriverFactory factory = AppiumDriverFactory.getInstanceOfAppiumFactory();
+        calculator = new calculatorScreen((AndroidDriver) factory.getDriver());
     }
 
     @When("I press {int}")
