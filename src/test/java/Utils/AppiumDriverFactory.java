@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class AppiumDriverFactory {
 
-    private AndroidDriver driver;
+    private static AndroidDriver driver;
 
     public static AppiumDriverFactory instanceOfAppiumFactory;
 
@@ -37,7 +37,7 @@ public class AppiumDriverFactory {
         return instanceOfAppiumFactory;
     }
 
-    public AppiumDriver getDriver() {
+    public static AppiumDriver getDriver() {
         return driver;
     }
 
