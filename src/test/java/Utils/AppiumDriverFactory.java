@@ -28,7 +28,7 @@ public class AppiumDriverFactory {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        driver.manage().timeouts().implicitlyWait(15, java.util.concurrent.TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
     }
 
     public static AppiumDriverFactory getInstanceOfAppiumFactory() {

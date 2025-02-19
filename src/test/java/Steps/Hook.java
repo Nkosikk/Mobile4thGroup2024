@@ -20,9 +20,9 @@ public class Hook {
     }
     @AfterStep
     public void addScreenshot(Scenario scenario){
-        if (scenario.isFailed()){
+//        if (scenario.isFailed()){
             byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png", "image");
-        }
+//        }
     }
 }

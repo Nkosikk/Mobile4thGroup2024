@@ -12,6 +12,7 @@ target/
 *.iml
 *.ipr
 Reports/
+test-output/
 ### Eclipse ###
 .apt_generated
 .classpath

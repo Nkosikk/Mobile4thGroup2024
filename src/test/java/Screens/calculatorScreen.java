@@ -12,7 +12,7 @@ public class calculatorScreen {
     @FindBy(id = "com.google.android.calculator:id/op_add")
     private WebElement addButton;
 
-    @FindBy(id = "eom.google.android.calculator:id/eq")
+    @FindBy(id = "com.google.android.calculator:id/eq")
     private WebElement equalsButton;
 
     @FindBy(id = "com.google.android.calculator:id/result_final")
