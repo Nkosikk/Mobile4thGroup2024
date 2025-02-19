@@ -42,13 +42,14 @@ public class AppiumDriverFactory {
     }
 
 
-    public void takeScreenshot(String fileName) {
+    public String takeScreenshot(String fileName) {
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             FileHandler.copy(srcFile, new File(System.getProperty("user.dir") + "/screenshots/" + fileName + ".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return fileName;
     }
 
 }
