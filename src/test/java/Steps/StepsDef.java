@@ -17,8 +17,9 @@ public class StepsDef {
 
     @Given("I open the calculator app")
     public void iOpenTheCalculatorApp() throws MalformedURLException {
-        AppiumDriverFactory factory = AppiumDriverFactory.getInstanceOfAppiumFactory();
-        calculator = new calculatorScreen((AndroidDriver) factory.getDriver());
+        String appPath = System.getProperty("appPath", System.getProperty("user.dir") + "/src/main/Apps/Calculator.apk");
+        AppiumDriverFactory.getInstanceOfAppiumFactory(appPath);
+        this.calculator = new calculatorScreen((AndroidDriver) AppiumDriverFactory.getDriver());
     }
 
     @When("I press {int}")

@@ -18,11 +18,11 @@ public class AppiumDriverFactory {
 
     public static AppiumDriverFactory instanceOfAppiumFactory;
 
-    public AppiumDriverFactory() {
+    public AppiumDriverFactory(String appPath) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appium:automationName", "UiAutomator2");
-        capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/src/main/Apps/Calculator.apk");
+        capabilities.setCapability("appium:app", appPath);
         try {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), capabilities);
         } catch (MalformedURLException e) {
@@ -31,9 +31,9 @@ public class AppiumDriverFactory {
         driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
     }
 
-    public static AppiumDriverFactory getInstanceOfAppiumFactory() {
+    public static AppiumDriverFactory getInstanceOfAppiumFactory(String appPath) {
         if (instanceOfAppiumFactory == null)
-            instanceOfAppiumFactory = new AppiumDriverFactory();
+            instanceOfAppiumFactory = new AppiumDriverFactory(appPath);
         return instanceOfAppiumFactory;
     }
 
