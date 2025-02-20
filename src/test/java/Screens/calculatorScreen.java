@@ -18,6 +18,12 @@ public class calculatorScreen {
     @FindBy(id = "com.google.android.calculator:id/result_final")
     private WebElement result;
 
+    @FindBy(id = "com.google.android.calculator:id/op_mul")
+    private WebElement multiplyButton;
+
+    @FindBy(id = "com.google.android.calculator:id/op_pct")
+    private WebElement percentButton;
+
     public calculatorScreen(AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -37,5 +43,13 @@ public class calculatorScreen {
 
     public String getResult() {
         return result.getText();
+    }
+
+    public void pressMultiplyButton() {
+        multiplyButton.click();
+    }
+
+    public void pressPercentButton() {
+        percentButton.click();
     }
 }

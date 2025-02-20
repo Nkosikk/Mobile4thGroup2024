@@ -42,4 +42,15 @@ public class StepsDef {
         String result = calculator.getResult();
         assert result.equals(String.valueOf(expectedResult));
     }
+
+
+    @And("I press the multiply button")
+    public void iPressTheMultiplyButton() {
+        calculator.pressMultiplyButton();
+    }
+
+    @And("I press the percent button")
+    public void iPressThePercentButton() {
+        calculator.pressPercentButton();
+    }
 }
