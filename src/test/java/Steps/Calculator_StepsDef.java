@@ -4,13 +4,10 @@ import Screens.calculatorScreen;
 import Utils.AppiumDriverFactory;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
-public class StepsDef {
+public class Calculator_StepsDef {
 
     private AndroidDriver driver;
     private calculatorScreen calculator;
