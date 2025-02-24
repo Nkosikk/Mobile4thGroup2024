@@ -53,4 +53,12 @@ public class StepsDef {
     public void iPressThePercentButton() {
         calculator.pressPercentButton();
     }
+
+    @When("I enter the number {int}")
+    public void iEnterTheNumber(int number) {
+        String numberStr = String.valueOf(number);
+        for (char digit : numberStr.toCharArray()) {
+            calculator.pressDigit(Character.getNumericValue(digit));
+        }
+    }
 }
